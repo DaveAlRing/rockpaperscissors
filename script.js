@@ -14,13 +14,11 @@ function getHumanChoice() {
     return prompt("Please select Rock, Paper, or Scissor")
 };
 
-console.log(computerChoice);
-console.log(humanChoice);
-
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+   
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
 
@@ -58,16 +56,17 @@ function playRound(humanChoice, computerChoice) {
 };
 
 function playGame(humanScore, computerScore) {
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
-
     while(i<5){
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        console.log(humanChoice);
+        console.log(computerChoice);
         playRound(humanChoice, computerChoice);
         i++;
     };
     console.log(`Computer Score: ${computerScore}`);
     console.log(`Human Score: ${humanScore}`);
-    
+
     if (humanScore > computerScore) {
         console.log("You win the game!");
     } else if (humanScore < computerScore) {
@@ -75,6 +74,8 @@ function playGame(humanScore, computerScore) {
     } else {
         console.log("Its a tie!");
     }
-}
+};
+
+playGame(humanScore,computerScore);
 
 
