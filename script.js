@@ -14,9 +14,6 @@ function getHumanChoice() {
     return prompt("Please select Rock, Paper, or Scissor")
 };
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
    
     humanChoice = humanChoice.toLowerCase();
@@ -55,7 +52,9 @@ function playRound(humanChoice, computerChoice) {
         };
 };
 
-function playGame(humanScore, computerScore) {
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
     let i = 0;
     while(i<5){
         let humanChoice = getHumanChoice();
