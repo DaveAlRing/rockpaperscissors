@@ -10,21 +10,56 @@ function getComputerChoice(){
     };
 };
 
-function getUserChoice() {
+function getHumanChoice() {
     return prompt("Please select Rock, Paper, or Scissor")
 };
 
-let userChoice = getUserChoice();
+let humanChoice = getHumanChoice();
 let computerChoice = getComputerChoice();
 
 console.log(computerChoice);
-console.log(userChoice);
+console.log(humanChoice);
 
 let humanScore = 0;
 let computerScore = 0;
 
-function compareChoice(userChoice, computerChoice) {
-    if(userChoice==computerChoice) {
-        
-    }
-}
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+    computerChoice = computerChoice.toLowerCase();
+    
+    if(humanChoice == "rock") {
+        if(computerChoice == "paper"){
+            console.log("You lose this round!");
+            return computerScore +=1;
+        } else if(computerChoice=="scissors"){
+            console.log("You win this round!");
+            return humanScore +=1;
+        } else {
+            console.log("Its a draw!");
+        } 
+    } else if(humanChoice == "paper") {
+        if(computerChoice == "scissors"){
+            console.log("You lose this round!");
+            return computerScore +=1;
+        } else if(computerChoice=="rock"){
+            console.log("You win this round!");
+            return humanScore +=1;
+        } else {
+            console.log("Its a draw!");
+        }
+    } if(humanChoice == "scissors") {
+        if(computerChoice == "rock"){
+            console.log("You lose this round!");
+            return computerScore +=1;
+        } else if(computerChoice=="paper"){
+            console.log("You win this round!");
+            return humanScore +=1;
+        } else {
+            console.log("Its a draw!");
+        }
+    };
+};
+
+playRound(humanChoice, computerChoice);
+console.log(`Computer Score: ${computerScore}`);
+console.log(`Human Score: ${humanScore}`);
