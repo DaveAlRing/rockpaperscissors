@@ -18,36 +18,31 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
    
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
+    let result = '';
 
     if(humanChoice == "rock") {
         if(computerChoice == "paper"){
-            console.log("You lose this round!");
-            return computerScore +=1;
+            return "You lose this round!";
         } else if(computerChoice=="scissors"){
-            console.log("You win this round!");
-            return humanScore++;
+            return "You win this round!";
         } else {
-            console.log("Its a draw!");
+            return "Its a draw!";
         } 
     } else if(humanChoice == "paper") {
         if(computerChoice == "scissors"){
-            console.log("You lose this round!");
-            return computerScore++;
+            return "You lose this round!";
         } else if(computerChoice=="rock"){
-            console.log("You win this round!");
-            return humanScore++;
+            return "You win this round!";
         } else {
-            console.log("Its a draw!");
+            return "Its a draw!";
         }
     } if(humanChoice == "scissors") {
         if(computerChoice == "rock"){
-            console.log("You lose this round!");
-            return computerScore ++;
+            return "You lose this round!";
         } else if(computerChoice=="paper"){
-            console.log("You win this round!");
-            return humanScore++;
+            return "You win this round!";
         } else {
-            console.log("Its a draw!");
+            return "Its a draw!";
         }
         };
 };
@@ -55,13 +50,21 @@ function playRound(humanChoice, computerChoice, humanScore, computerScore) {
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+    let result = '';
     let i = 0;
+
     while(i<5){
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
         console.log(humanChoice);
         console.log(computerChoice);
-        playRound(humanChoice, computerChoice, humanScore, computerScore);
+        result = playRound(humanChoice, computerChoice);
+        console.log(result);
+        if(result=="You win this round!") {
+            humanScore++;
+        } else if (result=="You lose this round!") {
+            computerScore++;
+        }
         i++;
     };
     console.log(`Computer Score: ${computerScore}`);
