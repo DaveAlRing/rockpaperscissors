@@ -20,6 +20,9 @@ let computerChoice = getComputerChoice();
 console.log(computerChoice);
 console.log(userChoice);
 
+let humanScore = 0;
+let computerScore = 0;
+
 function compareChoice(userChoice, computerChoice) {
     if(userChoice==computerChoice) {
         
