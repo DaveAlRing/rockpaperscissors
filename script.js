@@ -1,5 +1,3 @@
-
-
 function getComputerChoice(){
     let randomValue = Math.floor(Math.random() * 3);
     
@@ -10,7 +8,20 @@ function getComputerChoice(){
     } else {
         return "Scissors"
     };
-}
+};
 
-let choice = getComputerChoice();
-console.log(choice);
+function getUserChoice() {
+    return prompt("Please select Rock, Paper, or Scissor")
+};
+
+let userChoice = getUserChoice();
+let computerChoice = getComputerChoice();
+
+console.log(computerChoice);
+console.log(userChoice);
+
+function compareChoice(userChoice, computerChoice) {
+    if(userChoice==computerChoice) {
+        
+    }
+}
