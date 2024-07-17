@@ -2,17 +2,13 @@ function getComputerChoice(){
     let randomValue = Math.floor(Math.random() * 3);
     
     if(randomValue == 0) {
-        return "Rock"
+        return "rock"
     } else if (randomValue == 1) {
-        return "Paper"
+        return "paper"
     } else {
-        return "Scissors"
+        return "scissors"
     };
 };
-
-// function getHumanChoice() {
-//     return prompt("Please select Rock, Paper, or Scissor")
-// };
 
 function playRound(humanChoice, computerChoice) {
 
@@ -32,7 +28,7 @@ function playRound(humanChoice, computerChoice) {
         } else {
             return "Its a draw!";
         }
-    } if(humanChoice == "scissors") {
+    } else {
         if(computerChoice == "rock"){
             return "You lose this round!";
         } else if(computerChoice=="paper"){
